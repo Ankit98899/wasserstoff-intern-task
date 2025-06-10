@@ -41,10 +41,11 @@ provide detailed, cited responses to user queries.
 │   │   ├── services/       
 │   │   ├── templates/      
 │   │   ├── main.py         
-│   │   └── .env            
+│   │               
 │   ├── Dockerfile          
 │   └── requirements.txt    
-├── data/                   
+├── data/ 
+|___.env                  
 ├── README.md               
 ```
 
@@ -52,19 +53,22 @@ provide detailed, cited responses to user queries.
 
 ## 🐳 Running with Docker
 
-### 1. Clone the repository:
+### 1. Clone the repository
 
 ```bash
-git clone https://github.com/chanchalalam/wasserstoff-AiInternTask/
+git clone 
 cd wasserstoff-AiInternTask
 ```
 
-### 2. Set your Groq API Key:
+### 2. Set your Groq API Key:  
 
-Create a `.env` file in the root:
 
+Create a `.env` file in the root: 
 ```
-GROQ_API_KEY=your_groq_api_key_here
+
+GROQ_API_KEY=your_groq_api_key_here 
+OPENAI_API_KEY=your_openapi_key_here
+
 ```
 
 Ensure `.env` is in your `.gitignore`.
@@ -75,11 +79,12 @@ Ensure `.env` is in your `.gitignore`.
 docker build --build-arg GROQ_API_KEY=$(grep GROQ_API_KEY .env | cut -d '=' -f2) -t document-qa-backend .
 ```
 
-### 4. Run the Docker container:
+### 4. Run the Docker container
 
 ```bash
-docker run -d -p 5000:5000 --name docqa document-qa-backend
+docker run -d -p 8080:8080 --name docqa document-qa-backend
 ```
 
-Visit the app at: [http://localhost:5000](http://localhost:5000)
+Visit the app at: [http://localhost:8080]
+
 

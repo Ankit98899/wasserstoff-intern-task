@@ -139,3 +139,7 @@ if __name__ == '__main__':
         else:
             print("Groq client could not be initialized.")
     print("--- llm_service.py test finished ---")
+ 
+
+
+

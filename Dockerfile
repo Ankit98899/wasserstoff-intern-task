@@ -1,19 +1,19 @@
-FROM python:3.10-slim
-
+FROM python:3.10-slim  
+ 
 RUN apt-get update && apt-get install -y tesseract-ocr libtesseract-dev poppler-utils && rm -rf /var/lib/apt/lists/*
 
-WORKDIR /usr/src/app
+WORKDIR /usr/src/app   
 
-ARG GROQ_API_KEY
+ARG GROQ_API_KEY  
 
 ENV GROQ_API_KEY=${GROQ_API_KEY}
+ENV OPENAI_API_KEY=${OPENAI_API_KEY}
+COPY requirements.txt ./ 
 
-COPY requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt 
 
-RUN pip install --no-cache-dir -r requirements.txt
+COPY . . 
 
-COPY . .
+EXPOSE 8080
 
-EXPOSE 5000
-
-CMD ["python", "app/main.py"]
+CMD ["python", "app/main.py"]  

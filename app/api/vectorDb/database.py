@@ -7,14 +7,13 @@ from sentence_transformers import SentenceTransformer
 from langchain.text_splitter import RecursiveCharacterTextSplitter 
 import json
 import time
-import uuid
+import uuid  
 
-from pypdf import PdfReader
+from pypdf import PdfReader  
 
-os.environ["TOKENIZERS_PARALLELISM"] = "false"
+os.environ["TOKENIZERS_PARALLELISM"]="false"  
 
-# Setup for LLM Service 
-import sys
+import sys  
 _current_script_dir = os.path.dirname(os.path.realpath(__file__))
 _app_dir = os.path.abspath(os.path.join(_current_script_dir, "..", "..")) 
 
@@ -48,9 +47,9 @@ MODEL_NAME = 'all-MiniLM-L6-v2'
 
 # Helper Functions for Document Processing
 def extract_text_from_pdf_pypdf(pdf_path: str) -> str:
-    text = ""
+    text = " "
     try:
-        reader = PdfReader(pdf_path)
+        reader = PdfReader(pdf_path) 
         if not reader.pages:
             print(f"WARN (extract_text_from_pdf_pypdf): No pages found in PDF: {pdf_path}")
             return ""
