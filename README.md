@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 📄 Document Research & Theme Identification Chatbot
 
 This project is an interactive chatbot that can perform research across a large set of documents
@@ -88,3 +89,7 @@ docker run -d -p 8080:8080 --name docqa document-qa-backend
 Visit the app at: [http://localhost:8080]
 
 
+=======
+# wasserstoff-intern-task
+This repository contains the research, analysis, and implementation details of a chatbot system focused on processing documents and identifying key themes. The project explores natural language processing techniques for understanding and extracting meaningful information, aiming to enhance chatbot interactions through contextual awareness.
+>>>>>>> 10928588d2bc8e86086a9a68b2df04da865e8952
